@@ -27,12 +27,19 @@ const Bolumler = () => {
   const handleVideoClick = (videoId, index) => {
     setSelectedVideo(videoId);
     setCurrentVideoIndex(index); // Videonun index'ini güncelle
-
+  
     // Eğer video izlenmemişse, izlenen videolar listesine ekle
     if (!watchedVideos.includes(index)) {
       setWatchedVideos([...watchedVideos, index]);
     }
+  
+    // Sayfayı en yukarıya kaydır
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // Yavaşça kaydırmak için
+    });
   };
+  
 
   const handleNext = () => {
     if (currentVideoIndex < videos.length - 1) {
