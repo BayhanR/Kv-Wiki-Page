@@ -1,39 +1,41 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
-const characters = Array(9).fill("Character");
+// Örnek karakter veri seti (Placeholder)
+const characters = [
+  "Character 1",
+  "Character 2",
+  "Character 3",
+  "Character 4",
+  "Character 5",
+  "Character 6",
+  "Character 7",
+  "Character 8",
+  "Character 9",
+  "Character 6",
+  "Character 7",
+  "Character 8",
+  "Character 9",  "Character 6",
+  "Character 7",
+  "Character 8",
+  "Character 9",  "Character 6",
+  "Character 7",
+  "Character 8",
+  "Character 9",
+];
 
 const CharacterGrid = () => {
-  const [loading, setLoading] = useState(true);
-
-  // Veriler yüklenene kadar 3 saniye bekle, sonra yüklemeyi sonlandır.
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 3000); // 3 saniye sonra verilerin yüklendiğini varsayalım
-    return () => clearTimeout(timer); // Temizleme işlemi
-  }, []);
-
   return (
     <div className="p-6 text-center">
-      <h1 className="text-3xl font-bold text-indigo-900 mb-8">Character Wiki</h1>
-      <div className="grid grid-cols-3 gap-6">
-        {loading
-          ? Array(9).fill(0).map((_, index) => (
-              <div
-                key={index}
-                className="bg-gray-300 text-gray-600 h-24 flex items-center justify-center rounded-lg shadow-md"
-              >
-                <span className="text-sm">Loading...</span>
-              </div>
-            ))
-          : characters.map((character, index) => (
-              <div
-                key={index}
-                className="bg-purple-500 text-white flex items-center justify-center rounded-lg shadow-md"
-              >
-                <p className="font-bold text-white text-lg">{character}</p>
-              </div>
-            ))}
+      <h1 className="text-2xl font-bold text-indigo-900 mb-6">Character Wiki</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {characters.map((character, index) => (
+          <div
+            key={index}
+            className="bg-purple-500 text-white h-24 flex items-end justify-center rounded-md shadow-md"
+          >
+            <p className="font-bold text-indigo-900 mb-2">{character}</p>
+          </div>
+        ))}
       </div>
     </div>
   );
