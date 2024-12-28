@@ -41,6 +41,7 @@ const CharacterGrid = ({ characters }: any) => {
           character={showChar}
           onClose={onClose}
         />
+
       </div>
     </div>
   );

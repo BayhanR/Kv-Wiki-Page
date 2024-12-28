@@ -7,7 +7,7 @@ import Karakterler from './pages/Karakterler';
 import Hikaye from './pages/Hikaye';
 import Bolumler from './pages/Bolumler';
 import Harita from './pages/Harita';
-import Test from './pages/test';
+import Test from './pages/Test';
 
 function App() {
   return (
