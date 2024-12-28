@@ -6,13 +6,12 @@ const HomePage = () => {
   const [currentPosterIndex, setCurrentPosterIndex] = useState(0); // Geçerli posterin index'i
   const [loading, setLoading] = useState(true);
   const [fade, setFade] = useState(false);  // Fade animasyonunun kontrolü
-  const [overview, setOverview] = useState(""); // Dizinin özetini tutacak state
 
-  // Posterleri ve dizi bilgisini çeken fonksiyon
-  const fetchPostersAndInfo = async () => {
+  // Posterleri çeken fonksiyon
+  const fetchPosters = async () => {
     const options = {
       method: 'GET',
-      url: 'https://api.themoviedb.org/3/tv/34587?language=tr-TR', // API endpoint
+      url: 'https://api.themoviedb.org/3/tv/34587/images', // API endpoint
       headers: {
         accept: 'application/json',
         Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzYjNiOWM4MTZmZmE5MjkyY2JmYjI3ZGUyYjFmZmU1OCIsIm5iZiI6MTczNTA3MDI0Mi4zMjMsInN1YiI6IjY3NmIxMjIyYjBjMzc2ZDQyMWFhMGFjOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.hyHNegZTLcqD_EkFzjwnO3JX4XEA8D9BwKQQbJ8pwm8', // Bearer token
@@ -21,14 +20,10 @@ const HomePage = () => {
 
     try {
       const response = await axios.request(options);
-      // Dizinin özetini alıyoruz
-      setOverview(response.data.overview);
-
-      // Posterleri çekiyoruz
-      const posterUrls = response.data.poster_path
-        ? [`https://image.tmdb.org/t/p/w500${response.data.poster_path}`]
-        : [];
-
+      // "posters" kısmındaki her bir posterin file_path değerini alıp, tam URL'ye dönüştürerek posterler dizisine ekliyoruz
+      const posterUrls = response.data.posters.map(
+        (poster) => `https://image.tmdb.org/t/p/w500${poster.file_path}`
+      );
       // 9. posteri çıkartıyoruz
       const filteredPosters = posterUrls.filter((_, index) => index !== 8);
       setPosters(filteredPosters);  // Posterleri dizide saklıyoruz
@@ -39,9 +34,9 @@ const HomePage = () => {
     }
   };
 
-  // Posterleri ve dizi bilgisini çekmek için useEffect
+  // Posterleri çekmek için useEffect
   useEffect(() => {
-    fetchPostersAndInfo();  // Sayfa yüklendiğinde posterleri ve bilgileri çek
+    fetchPosters();  // Sayfa yüklendiğinde posterleri çek
   }, []);
 
   // Geçerli posteri değiştirme fonksiyonu
@@ -61,9 +56,9 @@ const HomePage = () => {
     <div className="flex mt-20 h-screen">
       {/* Sol Taraf: Metin */}
       <div className="flex-1 p-6">
-        <h1 className="text-3xl font-bold">Kurtlar Vadisi</h1>
+        <h1 className="text-3xl font-bold">Posterler</h1>
         <p className="mt-4 text-lg">
-          {overview}
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.
         </p>
         
         {/* Geçiş Butonu */}
@@ -78,8 +73,8 @@ const HomePage = () => {
       </div>
 
       {/* Sağ Taraf: Poster */}
-      <div className="w-1/3 p-0 flex items-center justify-center overflow-hidden">
-        <div className="relative w-full h-full bg-gray-200 rounded-lg">
+      <div className="w-1/3 p-6 flex items-center justify-center">
+        <div className="relative w-full h-full bg-gray-200 rounded-lg overflow-hidden">
           <img
             src={posters[currentPosterIndex]}
             alt={`Poster ${currentPosterIndex + 1}`}
