@@ -31,7 +31,7 @@ const CharacterGrid = () => {
         {characters.map((character, index) => (
           <div
             key={index}
-            className="bg-purple-500 text-white h-24 flex items-end justify-center rounded-md shadow-md"
+            className="bg-gray-900 text-white h-24 flex items-end justify-center rounded-md shadow-md"
           >
             <p className="font-bold text-indigo-900 mb-2">{character}</p>
           </div>
