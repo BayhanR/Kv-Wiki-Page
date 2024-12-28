@@ -114,19 +114,26 @@ const Bolumler = () => {
               />
             </div>
             <div className="flex-1">
-              <h2 className="text-lg font-semibold">{video.snippet.title}</h2>
-              {watchedVideos.includes(index) ? (
-                <span className="text-sm text-gray-500">(İzlendi)</span>
-              ) : (
-                <span className="text-sm text-gray-500">(İzlenmedi)</span>
-              )}
-            </div>
+  <h2 className="text-lg font-semibold">
+    {video.snippet.title}
+    {/* Oynatılıyor yazısını entegre ediyoruz */}
+    {currentVideoIndex === index && (
+      <span className="text-blue-600 ml-2">(Oynatılıyor)</span> // Oynatılıyor yazısı
+    )}
+  </h2>
+  {watchedVideos.includes(index) ? (
+    <span className="text-sm text-gray-500">(İzlendi)</span>
+  ) : (
+    <span className="text-sm text-gray-500">(İzlenmedi)</span>
+  )}
+</div>
+
             {/* "İzle" butonu, oynatıcıda video izleniyorsa gizlenecek */}
             {currentVideoIndex !== index && (
               <button
                 className="bg-blue-500 text-white px-4 py-2 rounded"
                 onClick={(e) => {
-                  e.stopPropagation(); // Tıklama olayının video tıklama olayına ulaşmasını engelle
+                  e.stopPropagation(); 
                   toggleWatchedStatus(index);
                 }}
               >
