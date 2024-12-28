@@ -83,10 +83,10 @@ const Bolumler = () => {
             )}
             {videos[currentVideoIndex]?.snippet.title}
           </h2>
-          <div className="w-full max-w-4xl mx-auto h-[300px] mb-4">
+          <div className="w-full max-w-4xl mx-auto h-[300px] mb-60">
             <iframe
               width="100%"
-              height="100%"
+              height="500"
               src={`https://www.youtube.com/embed/${selectedVideo}`}
               title="Video"
               frameBorder="0"
