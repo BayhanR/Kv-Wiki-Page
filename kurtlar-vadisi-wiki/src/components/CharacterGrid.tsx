@@ -24,13 +24,13 @@ const CharacterGrid = ({ characters }: any) => {
                 SetShow(true);
               }}
               key={character.id}
-              className="bg-purple-500 text-white flex flex-col items-center justify-center rounded-md shadow-md h-[160px] cursor-pointer"
+              className="bg-indigo-800 text-white flex flex-col items-center justify-center rounded-md shadow-md h-[160px] cursor-pointer"
             >
               <img
                 src={`https://image.tmdb.org/t/p/w500${character.profile_path}`}
                 className="w-[100px] h-[100px]"
               />
-              <p className="font-bold text-indigo-900 text-center">
+              <p className="font-bold text-gray-800 text-center">
                 {character.character}
               </p>
             </div>
