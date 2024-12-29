@@ -2,12 +2,20 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 const HomePage = () => {
+  const backgroundStyle = {
+    backgroundImage: 'url(../public/korcaycay.jpg)',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center center',
+    backgroundAttachment: 'fixed',
+    height: '100vh',
+  };
   const [posters, setPosters] = useState([]); // Posterleri tutan dizi
   const [currentPosterIndex, setCurrentPosterIndex] = useState(0); // Geçerli posterin index'i
   const [loading, setLoading] = useState(true);
   const [fade, setFade] = useState(false);  // Fade animasyonunun kontrolü
   const [overview, setOverview] = useState(""); // Dizinin özetini tutacak state
   // Posterleri çeken fonksiyon
+  
   const fetchPosters = async () =>{ 
     const options = {
       method: 'GET',
@@ -71,7 +79,7 @@ const HomePage = () => {
   }
 
   return ( 
-    <div className="flex mt-20 h-screen">
+    <div className="flex mt-20 h-screen ">
       {/* Sol Taraf: Metin */}
       <div className="flex-1 p-6 flex flex-col justify-center">
       <h1 className="text-3xl font-bold text-left mb-4">Dizinin Konusu</h1>

@@ -1,6 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* Sayfanın tamamını kaplamasını sağlar */
+  background-image: url('../public/korcancay.jpg');
+  background-size: cover; /* Resmi tüm ekranı kaplayacak şekilde ayarlar */
+  background-position: center center; /* Resmin ortalanmasını sağlar */
+  background-attachment: fixed; /* Resmin sabit kalmasını sağlar */
+  color: white; /* Yazının görünürlüğü için örnek */
+}
 /* Gece mavisi arka planın kaybolması */
 /* @keyframes fadeInOut {
   0% {
