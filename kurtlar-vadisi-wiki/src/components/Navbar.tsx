@@ -15,7 +15,7 @@ const Navbar = () => {
           />
       
         </Link>
-        <div className="-mb-5 mr-52">
+        <div className="-mb-5 mr-52 font-serif">
         <MusicPlayer />
       </div>
         <div className="hidden w-full md:block md:w-auto">
