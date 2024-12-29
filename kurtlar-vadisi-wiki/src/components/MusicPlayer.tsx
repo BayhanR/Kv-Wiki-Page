@@ -64,6 +64,7 @@ const MusicPlayer = () => {
   useEffect(() => {
     fetchYouTubeMusic();
     loadYouTubeAPI();
+    setIsPlaying(true);
   }, []);
 
   // Şarkıyı değiştirme fonksiyonu
