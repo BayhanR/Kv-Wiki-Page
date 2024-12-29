@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import '../navbar.css'
 import MusicPlayer from "./MusicPlayer";
+import handleNext from "./MusicPlayer";
 
 const Navbar = () => {
   return (

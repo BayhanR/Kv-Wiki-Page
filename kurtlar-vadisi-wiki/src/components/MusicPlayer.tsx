@@ -56,23 +56,27 @@ const MusicPlayer = () => {
             },
           },
         });
+        
       }
     };
   };
 
+  
   // Component yüklendiğinde müzikleri çek ve YouTube API'yi yükle
   useEffect(() => {
     fetchYouTubeMusic();
     loadYouTubeAPI();
-    setIsPlaying(true);
+    
   }, []);
-
+  
   // Şarkıyı değiştirme fonksiyonu
   const handleChangeTrack = (track) => {
     setCurrentTrack(track);
     setIsPlaying(true); // Yeni şarkıya geçerken çalmayı başlat
   };
 
+
+  
   // İleri gitme fonksiyonu
   const handleNext = () => {
     const currentIndex = musicList.indexOf(currentTrack);
@@ -93,7 +97,7 @@ const MusicPlayer = () => {
   };
 
   if (!currentTrack) {
-    return <div>Loading...</div>; // Şarkılar yüklenene kadar loading gösterebiliriz
+    return <div className="text-cyan-50">Müzik Oynatıcı Yükleniyor...</div>; // Şarkılar yüklenene kadar loading gösterebiliriz
   }
 
   return (
