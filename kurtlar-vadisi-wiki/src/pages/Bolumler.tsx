@@ -97,7 +97,7 @@ const Bolumler = () => {
         </div>
       )}
 
-      <div className="space-y-4">
+      <div className="space-y-4 mt-10 mb-16">
         {videos.map((video, index) => (
           <div
             key={video.id}

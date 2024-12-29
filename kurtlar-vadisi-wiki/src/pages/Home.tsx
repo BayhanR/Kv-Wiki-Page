@@ -6,9 +6,9 @@ const HomePage = () => {
   const [currentPosterIndex, setCurrentPosterIndex] = useState(0); // Geçerli posterin index'i
   const [loading, setLoading] = useState(true);
   const [fade, setFade] = useState(false);  // Fade animasyonunun kontrolü
-
+  const [overview, setOverview] = useState(""); // Dizinin özetini tutacak state
   // Posterleri çeken fonksiyon
-  const fetchPosters = async () => {
+  const fetchPosters = async () =>{ 
     const options = {
       method: 'GET',
       url: 'https://api.themoviedb.org/3/tv/34587/images', // API endpoint
@@ -17,9 +17,9 @@ const HomePage = () => {
         Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzYjNiOWM4MTZmZmE5MjkyY2JmYjI3ZGUyYjFmZmU1OCIsIm5iZiI6MTczNTA3MDI0Mi4zMjMsInN1YiI6IjY3NmIxMjIyYjBjMzc2ZDQyMWFhMGFjOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.hyHNegZTLcqD_EkFzjwnO3JX4XEA8D9BwKQQbJ8pwm8', // Bearer token
       },
     };
-
     try {
       const response = await axios.request(options);
+      setOverview(response.data.overview);
       // "posters" kısmındaki her bir posterin file_path değerini alıp, tam URL'ye dönüştürerek posterler dizisine ekliyoruz
       const posterUrls = response.data.posters.map(
         (poster) => `https://image.tmdb.org/t/p/w500${poster.file_path}`
@@ -33,10 +33,28 @@ const HomePage = () => {
       setLoading(false);
     }
   };
-
+  const fetchOverview = async () => {
+    const options = {
+      method: 'GET',
+      url: 'https://api.themoviedb.org/3/tv/34587?language=tr-TR', // API endpoint
+      headers: {
+        accept: 'application/json',
+        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzYjNiOWM4MTZmZmE5MjkyY2JmYjI3ZGUyYjFmZmU1OCIsIm5iZiI6MTczNTA3MDI0Mi4zMjMsInN1YiI6IjY3NmIxMjIyYjBjMzc2ZDQyMWFhMGFjOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.hyHNegZTLcqD_EkFzjwnO3JX4XEA8D9BwKQQbJ8pwm8', // Bearer token
+      },
+    }; 
+    try {
+      const response = await axios.request(options);
+      setOverview(response.data.overview);
+      setLoading(false);
+    } catch (error) {
+      console.error("Error fetching Overview:", error);
+      setLoading(false);
+    }
+  }
   // Posterleri çekmek için useEffect
   useEffect(() => {
-    fetchPosters();  // Sayfa yüklendiğinde posterleri çek
+    fetchPosters();
+    fetchOverview();  // Sayfa yüklendiğinde posterleri çek
   }, []);
 
   // Geçerli posteri değiştirme fonksiyonu
@@ -52,13 +70,13 @@ const HomePage = () => {
     return <div>Loading...</div>; // Yükleniyor durumu
   }
 
-  return (
+  return ( 
     <div className="flex mt-20 h-screen">
       {/* Sol Taraf: Metin */}
-      <div className="flex-1 p-6">
-        <h1 className="text-3xl font-bold">Posterler</h1>
-        <p className="mt-4 text-lg">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.
+      <div className="flex-1 p-6 flex flex-col justify-center">
+      <h1 className="text-3xl font-bold text-left mb-4">Dizinin Konusu</h1>
+        <p className="mt-4 text-lg mb-4">
+          {overview}
         </p>
         
         {/* Geçiş Butonu */}
