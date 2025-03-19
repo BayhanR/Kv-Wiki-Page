@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 81, "column": 0}, "map": {"version":3,"sources":["file://C%3A/Users/hp/source/repos/final-wiki-page/kv-wiki-app/pages/_app.tsx"],"sourcesContent":["import type { AppProps } from 'next/app'\r\nimport { motion, AnimatePresence } from 'framer-motion'\r\nimport { useRouter } from 'next/router'\r\n\r\nexport default function App({ Component, pageProps }: AppProps) {\r\n  const router = useRouter()\r\n\r\n  return (\r\n    <AnimatePresence mode=\"wait\">\r\n      <motion.div\r\n        key={router.route}\r\n        initial={{ opacity: 0 }}\r\n        animate={{ opacity: 1 }}\r\n        exit={{ opacity: 0 }}\r\n        transition={{ duration: 0.3 }}\r\n      >\r\n        <Component {...pageProps} />\r\n      </motion.div>\r\n    </AnimatePresence>\r\n  )\r\n}\r\n\r\n"],"names":[],"mappings":";;;;AACA;AACA;;;;;;;;AAEe,SAAS,IAAI,EAAE,SAAS,EAAE,SAAS,EAAY;IAC5D,MAAM,SAAS,CAAA,GAAA,uHAAA,CAAA,YAAS,AAAD;IAEvB,qBACE,qKAAC,gIAAA,CAAA,kBAAe;QAAC,MAAK;kBACpB,cAAA,qKAAC,gIAAA,CAAA,SAAM,CAAC,GAAG;YAET,SAAS;gBAAE,SAAS;YAAE;YACtB,SAAS;gBAAE,SAAS;YAAE;YACtB,MAAM;gBAAE,SAAS;YAAE;YACnB,YAAY;gBAAE,UAAU;YAAI;sBAE5B,cAAA,qKAAC;gBAAW,GAAG,SAAS;;;;;;WANnB,OAAO,KAAK;;;;;;;;;;AAUzB"}},
+    {"offset": {"line": 129, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}

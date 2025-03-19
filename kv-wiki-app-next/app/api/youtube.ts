@@ -1,0 +1,1 @@
+export const YOUTUBE_API_KEY = 'AIzaSyBJWIiiFONCriad3-ZREyXCa_aiYa0vicU'

@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'MyCustomFont'; /* Font ismi */
+    src: url('../public/fonts/RINGM___.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  

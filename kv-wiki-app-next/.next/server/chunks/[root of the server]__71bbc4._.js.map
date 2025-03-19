@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 143, "column": 0}, "map": {"version":3,"sources":["file://C%3A/Users/hp/source/repos/final-wiki-page/kv-wiki-app/app/api/chracters/route.ts"],"sourcesContent":["\"use server\"\r\n\r\nimport axios from \"axios\";\r\n\r\nexport async function GET(request: Request) {\r\n    const res = await axios.get(\"https://api.themoviedb.org/3/tv/34587/credits?api_key=3b3b9c816ffa9292cbfb27de2b1ffe58\")\r\n  \r\n    return Response.json({\r\n      cast: res.data.cast,\r\n    });\r\n}"],"names":[],"mappings":";;;;;;AAEA;;;;AAEO,eAAe,uCAAC,GAAD,IAAI,OAAgB;IACtC,MAAM,MAAM,MAAM,uIAAA,CAAA,UAAK,CAAC,GAAG,CAAC;IAE5B,OAAO,SAAS,IAAI,CAAC;QACnB,MAAM,IAAI,IAAI,CAAC,IAAI;IACrB;AACJ;;;IANsB;;AAAA,iPAAA"}},
+    {"offset": {"line": 164, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}

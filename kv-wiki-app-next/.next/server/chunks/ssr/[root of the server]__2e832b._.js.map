@@ -1,0 +1,9 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 87, "column": 0}, "map": {"version":3,"sources":["file://C%3A/Users/hp/source/repos/final-wiki-page/kv-wiki-app/app/test/page.tsx"],"sourcesContent":["import React from 'react';\r\nimport QuizForm from \"@/components/QuizForm\";\r\nimport axios from \"axios\";\r\n\r\nasync function getQuizQuestions() {\r\n  try {\r\n    const res = await axios.get(`${process.env.BACKEND}/api/quiz`);\r\n    return res.data.sorular;\r\n  } catch (error) {\r\n    console.error(\"Failed to fetch quiz questions:\", error);\r\n    return [];\r\n  }\r\n}\r\n\r\nexport default async function Quiz() {\r\n  const sorular = await getQuizQuestions();\r\n\r\n  return (\r\n    <div className=\"min-h-screen bg-fixed bg-cover bg-center bg-[url('/image.png')] py-12 px-4\">\r\n      <div className=\"max-w-4xl mx-auto\">\r\n        <h1 className=\"text-4xl font-bold text-white text-center mb-8\">\r\n          Kurtlar Vadisi Bilgi Yarışması\r\n        </h1>\r\n        <QuizForm sorular={sorular} />\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n\r\n"],"names":[],"mappings":";;;;;;;;;AAEA;;;;AAEA,eAAe;IACb,IAAI;QACF,MAAM,MAAM,MAAM,qIAAA,CAAA,UAAK,CAAC,GAAG,CAAC,GAAG,QAAQ,GAAG,CAAC,OAAO,CAAC,SAAS,CAAC;QAC7D,OAAO,IAAI,IAAI,CAAC,OAAO;IACzB,EAAE,OAAO,OAAO;QACd,QAAQ,KAAK,CAAC,mCAAmC;QACjD,OAAO,EAAE;IACX;AACF;AAEe,eAAe;IAC5B,MAAM,UAAU,MAAM;IAEtB,qBACE,8OAAC;QAAI,WAAU;kBACb,cAAA,8OAAC;YAAI,WAAU;;8BACb,8OAAC;oBAAG,WAAU;8BAAiD;;;;;;8BAG/D,8OAAC;oBAAS,SAAS;;;;;;;;;;;;;;;;;AAI3B"}},
+    {"offset": {"line": 143, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}},
+    {"offset": {"line": 154, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":""}},
+    {"offset": {"line": 154, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}

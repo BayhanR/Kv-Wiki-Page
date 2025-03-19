@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file://C%3A/Users/hp/source/repos/final-wiki-page/kv-wiki-app/app/page.tsx"],"sourcesContent":["\"use client\"\n\nimport { motion } from 'framer-motion'\nimport HomePage from '../components/'\n\nexport default function Home() {\n  return (\n    <motion.div\n      initial={{ opacity: 0, y: 20 }}\n      animate={{ opacity: 1, y: 0 }}\n      exit={{ opacity: 0, y: -20 }}\n      transition={{ duration: 0.3 }}\n    >\n      <HomePage />\n    </motion.div>\n  )\n}\n\n"],"names":[],"mappings":";;;;;;;;;AAEA;AAFA;;;;AAKe,SAAS;IACtB,qBACE,6LAAC,6LAAA,CAAA,SAAM,CAAC,GAAG;QACT,SAAS;YAAE,SAAS;YAAG,GAAG;QAAG;QAC7B,SAAS;YAAE,SAAS;YAAG,GAAG;QAAE;QAC5B,MAAM;YAAE,SAAS;YAAG,GAAG,CAAC;QAAG;QAC3B,YAAY;YAAE,UAAU;QAAI;kBAE5B,cAAA,6LAAC;;;;;;;;;;AAGP;KAXwB"}},
+    {"offset": {"line": 55, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}

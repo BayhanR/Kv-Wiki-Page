@@ -1,0 +1,7 @@
+{
+  "/page": "app/page.js",
+  "/bolumler/page": "app/bolumler/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/karakterler/page": "app/karakterler/page.js",
+  "/api/chracters/route": "app/api/chracters/route.js"
+}

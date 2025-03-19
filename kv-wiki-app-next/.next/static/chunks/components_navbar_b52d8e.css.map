@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack://[project]/components/navbar.css"],"sourcesContent":[".navbar {\r\n    font-family: 'Ringbearer', sans-serif;\r\n    font-size: 1.2rem; /* İstediğiniz boyutu ekleyebilirsiniz */\r\n  }\r\n  "],"names":[],"mappings":"AAAA"}},
+    {"offset": {"line": 5, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}

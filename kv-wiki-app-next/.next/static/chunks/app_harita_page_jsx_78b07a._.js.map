@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file://C%3A/Users/hp/source/repos/final-wiki-page/kv-wiki-app/app/harita/page.jsx"],"sourcesContent":["\"use client\"\r\n\r\nimport React from \"react\";\r\n\r\nconst Harita = () => {\r\n  return (\r\n    <div className=\"p-6\">\r\n      <h1 className=\"text-2xl font-bold text-indigo-900 mb-6\">Harita</h1>\r\n      {/* Harita resmini sığdırma */}\r\n      <div className=\"flex justify-center overflow-hidden\">\r\n        <img \r\n          src=\"/map.jpg\" // public klasöründeki harita dosyasına erişim\r\n          alt=\"Kurtlar Vadisi Haritası\"\r\n          className=\"w-full h-screen object-contain\" // Resmin boyutunu sınırlıyoruz\r\n        />\r\n      </div>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Harita;\r\n"],"names":[],"mappings":";;;;AAEA;AAFA;;;AAIA,MAAM,SAAS;IACb,qBACE,6LAAC;QAAI,WAAU;;0BACb,6LAAC;gBAAG,WAAU;0BAA0C;;;;;;0BAExD,6LAAC;gBAAI,WAAU;0BACb,cAAA,6LAAC;oBACC,KAAI,WAAW,8CAA8C;;oBAC7D,KAAI;oBACJ,WAAU,iCAAiC,+BAA+B;;;;;;;;;;;;;;;;;AAKpF;KAdM;uCAgBS"}},
+    {"offset": {"line": 58, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}
